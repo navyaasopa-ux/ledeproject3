@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What scraping 1,000 fake books from a website revealed</title>
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: #111;
+            background-color: #ffffff;
+        }
+
+        /* Typography & Links */
+        a {
+            color: #ff5757;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        h3 {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            font-size: 1.3rem;
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Hero Image Sections */
+        .hero {
+            position: relative;
+            height: 75vh;
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Adds a subtle dark overlay so white text is readable */
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+
+        /* Updated with your new background image */
+        .hero-1 {
+            background-image: url('images/header-bg.png');
+            /* Replace with your final hosted URL */
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 750px;
+            margin: 0 auto;
+            padding: 0 20px;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin: 0;
+            font-weight: bold;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Standard Content Sections */
+        .content {
+            max-width: 600px;
+            /* Optimal reading width */
+            margin: 0 auto;
+            padding: 0 20px;
+            font-size: 1.15rem;
+            line-height: 1.7;
+        }
+
+        .byline {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .intro-text {
+            margin-top: 60px;
+            margin-bottom: 60px;
+        }
+
+        /* Vertical Charts Layout */
+        .chart-section {
+            margin: 60px 0;
+        }
+
+        .chart-container {
+            max-width: 800px;
+            /* Slightly wider than the text to make charts stand out */
+            margin: 0 auto 30px auto;
+            padding: 0 20px;
+        }
+
+        .chart-placeholder {
+            min-height: 447px;
+            border: 2px dashed #cccccc;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            font-family: sans-serif;
+            font-size: 0.9rem;
+            text-align: center;
+            background-color: #fcfcfc;
+        }
+
+        /* Footer Section */
+        .footer {
+            max-width: 600px;
+            margin: 40px auto 60px auto;
+            padding: 30px 20px 0 20px;
+            border-top: 1px solid #eaeaea;
+            font-size: 1rem;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        .footer p {
+            margin-bottom: 1rem;
+            margin-top: 0;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .chart-section {
+                margin: 40px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Hero Image -->
+    <header class="hero hero-1">
+        <div class="hero-content">
+            <h1>What scraping 1,000 fake books from a website taught me</h1>
+        </div>
+    </header>
+
+    <!-- Article Content -->
+    <main>
+        <section class="content">
+            <div class="byline">
+                By <a href="#">Navya Asopa</a>
+            </div>
+        </section>
+        <section class="content intro-text">
+            <p>While the website Books to Scrape looks like a typical online bookstore, it’s a sandbox for students like
+                me to practice web scraping. I extracted key fields of the book’s title, genre, price range, rating, and
+                availability using Python to fetch them, BeautifulSoup to parse them, and by looping through 50 listing
+                pages to collect them.</p>
+
+            <p>Then, I used Pandas to group the data by genre and rating. Finally, I cleaned the data and stored it in a
+                CSV file, using Datawrapper to visualize my analysis. After analyzing a database of 1,000 books, I’ve
+                drawn some preliminary conclusions about book prices, their most common genre, and the average price of
+                books within each genre.</p>
+        </section>
+
+        <!-- Chart 1: Price Distribution of Books -->
+        <section class="chart-section">
+            <div class="chart-container">
+                <iframe title="Price Distribution of Books" aria-label="Column Chart" id="datawrapper-chart-jDI5W"
+                    src="https://datawrapper.dwcdn.net/jDI5W/1/" scrolling="no" frameborder="0"
+                    style="width: 0; min-width: 100% !important; border: none;" height="447" data-external="1"></iframe>
+            </div>
+            <div class="content">
+                <h3>1. Price Distribution of Books</h3>
+                <p>Most books fall into a mid-range bracket, forming a loose bell-shaped distribution on the chart, as
+                    only a few are either too expensive or too economical. The largest group, i.e. 113 books, are priced
+                    at £35-40.</p>
+            </div>
+        </section>
+
+        <!-- Chart 2: % of Books by Genre -->
+        <section class="chart-section">
+            <div class="chart-container">
+                <iframe title="Percentage of Books by Genre" aria-label="Pie Chart" id="datawrapper-chart-ehBOB"
+                    src="https://datawrapper.dwcdn.net/ehBOB/4/" scrolling="no" frameborder="0"
+                    style="width: 0; min-width: 100% !important; border: none;" height="617" data-external="1"></iframe>
+            </div>
+            <div class="content">
+                <h3>2. Percentage of Books by Genre </h3>
+                <p>This chart was challenging because the dataset had two book columns: “Default” and “Add a comment”.
+                    The former were the uncategorized books, and the latter resulted from an error in the scraped
+                    website's backend HTML. So, I clubbed the two and named the group “Uncategorized,” which ended up
+                    occupying the largest percentage, 24%, in the genre section after “Others,” including young adult,
+                    fantasy, romance, and mystery, among others. A fair share of books belong to clearly defined genres
+                    such as Fiction, Nonfiction, and Sequential Art. </p>
+            </div>
+        </section>
+
+        <!-- Chart 3: Average Price by Genre -->
+        <section class="chart-section">
+            <div class="chart-container">
+                <iframe title="Average Price by Genre" aria-label="Bar Chart" id="datawrapper-chart-rLVI0"
+                    src="https://datawrapper.dwcdn.net/rLVI0/2/" scrolling="no" frameborder="0"
+                    style="width: 0; min-width: 100% !important; border: none;" height="665" data-external="1"></iframe>
+            </div>
+            <div class="content">
+                <h3>3. Average Price by Genre </h3>
+                <p>The top-priced genres are Travel (£39.8), Fantasy (£39.6), and History (£37.3), while the
+                    lower-priced genres are Food & Drink (£31.4), Thriller (£31.4), and Mystery (£31.7). Although there
+                    is some variation in prices, most genres cluster within a fairly narrow range of ~£31–£40. This
+                    means that no genre is dramatically more pricey than others. </p>
+            </div>
+        </section>
+
+        <!-- Chart 4: Book Ratings by Genre -->
+        <section class="chart-section">
+            <div class="chart-container">
+                <iframe title="Book Ratings by Genre" aria-label="Bar Chart" id="datawrapper-chart-p1Mek"
+                    src="https://datawrapper.dwcdn.net/p1Mek/3/" scrolling="no" frameborder="0"
+                    style="width: 0; min-width: 100% !important; border: none;" height="665" data-external="1"></iframe>
+            </div>
+            <div class="content">
+                <h3>4. Book Ratings by Genre</h3>
+                <p>Poetry (3.53) has the highest average rating, followed by humor and young adult. These genres create
+                    emotional value and might have received more favorable reader reviews compared to Philosophy (2.2),
+                    Science Fiction (2.25), and Classic (2.47), which are denser to read. These numbers could also be
+                    dictated by fewer rankings in a genre. While most genres cluster between 2.7 and 3.3, the
+                    differences can be meaningful for gauging readers' opinions of book genres. </p>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Source & Repo Footer -->
+    <footer class="footer">
+        <p>The full analysis — including the notebook and data — is available in the project repository. View the code
+            and data on <a href="https://github.com/navyaasopa-ux/ledeproject3" target="_blank"
+                rel="noopener noreferrer">GitHub</a>.</p>
+        <p>Data scraped from: <a href="https://books.toscrape.com/" target="_blank" rel="noopener noreferrer">Books to
+                Scrape - Sandbox</a>. Charts built with DataWrapper. Page adapted from Jonathan Soma's story <a
+                href="https://jsoma.github.io/page-templates/fancy-header/index.html" target="_blank"
+                rel="noopener noreferrer">template</a>.</p>
+    </footer>
+
+    <!-- Datawrapper Responsive Resize Script (Consolidated at the bottom) -->
+    <script type="text/javascript">
+        (function () {
+            function e() {
+                window.addEventListener(`message`, function (e) {
+                    if (e.data[`datawrapper-height`] !== void 0) {
+                        var t = document.querySelectorAll(`iframe`);
+                        for (var n in e.data[`datawrapper-height`])
+                            for (var r = 0, i; i = t[r]; r++)
+                                if (i.contentWindow === e.source) {
+                                    var a = e.data[`datawrapper-height`][n] + `px`;
+                                    i.style.height = a
+                                }
+                    }
+                })
+            }
+            e()
+        })();
+    </script>
+</body>
+
+</html>
