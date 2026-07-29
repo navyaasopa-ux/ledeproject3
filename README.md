@@ -51,7 +51,7 @@ Using data scraped from *Books to Scrape*, a sandbox website designed for practi
 * Built charts using **Datawrapper**
 * Embedded visuals into a custom HTML page
 
-## Tools & Technologies
+## Tools Used
 
 * Python
 * Datawrapper
