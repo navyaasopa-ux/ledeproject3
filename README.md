@@ -70,7 +70,5 @@ Using data scraped from *Books to Scrape*, a sandbox website designed for practi
 * The importance of data cleaning in real-world datasets
 * How to identify meaningful patterns in a messy dataset
 
-## Repository
-
-View the full code, data, and notebook here:
-https://github.com/navyaasopa-ux/ledeproject3
+## Contact
+* Navya Asopa (navyaasopa@gmail.com)
